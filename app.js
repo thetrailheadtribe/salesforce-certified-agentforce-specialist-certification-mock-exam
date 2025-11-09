@@ -2,6 +2,8 @@
 const EXAM_DURATION_SECONDS = 60 * 60; // 60 minutes (change as needed)
 const QUESTIONS_PER_ATTEMPT = null; // null = use all; or set a number to sample
 let timeLeft = EXAM_DURATION_SECONDS;
+const QUESTIONS_PER_ATTEMPT = 5; // Change this to any number you want
+
 
 // State
 let questions = [];
@@ -27,8 +29,8 @@ async function loadQuestions() {
   let pool = shuffle([...raw]);
 
   // Optionally sample a subset each attempt
-  if (typeof QUESTIONS_PER_ATTEMPT === 'number' && QUESTIONS_PER_ATTEMPT > 0) {
-    pool = pool.slice(0, Math.min(QUESTIONS_PER_ATTEMPT, pool.length));
+  if (QUESTIONS_PER_ATTEMPT && QUESTIONS_PER_ATTEMPT < pool.length) {
+    pool = pool.slice(0, QUESTIONS_PER_ATTEMPT);
   }
 
   // Shuffle options within each question
