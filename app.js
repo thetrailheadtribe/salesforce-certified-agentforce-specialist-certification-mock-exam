@@ -23,7 +23,7 @@ function shuffle(array) {
 // Load and init
 async function loadQuestions() {
   try {
-    const res = await fetch('./agentforce_specialist_mock_70.json');
+    const res = await fetch('questions.json');
     const raw = await res.json();
     const rawCopy = [...raw];
   } catch (err) {
@@ -35,8 +35,8 @@ async function loadQuestions() {
   const pool = shuffle(rawCopy);
 
   // Optionally sample a subset each attempt
-  if (QUESTIONS_PER_ATTEMPT && QUESTIONS_PER_ATTEMPT < pool.length) {
-    pool = pool.slice(0, QUESTIONS_PER_ATTEMPT);
+  if (typeof QUESTIONS_PER_ATTEMPT === 'number' && QUESTIONS_PER_ATTEMPT > 0) {
+    pool = pool.slice(0, Math.min(QUESTIONS_PER_ATTEMPT, pool.length);
   }
 
   // Shuffle options within each question
