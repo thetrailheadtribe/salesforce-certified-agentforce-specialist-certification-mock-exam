@@ -25,13 +25,14 @@ async function loadQuestions() {
   try {
     const res = await fetch('questions.json');
     const raw = await res.json();
+    const rawCopy = [...raw];
   } catch (err) {
     document.getElementById('question').innerText = "Failed to load questions.";
     console.error("Error loading questions:", err);
   }
 
   // Shuffle entire question bank
-  let pool = shuffle([...raw]);
+  const pool = shuffle(rawCopy);
 
   // Optionally sample a subset each attempt
   if (QUESTIONS_PER_ATTEMPT && QUESTIONS_PER_ATTEMPT < pool.length) {
