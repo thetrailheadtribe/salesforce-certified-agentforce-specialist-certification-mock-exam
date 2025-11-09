@@ -23,7 +23,7 @@ function shuffle(array) {
 // Load and init
 async function loadQuestions() {
   try {
-    const res = await fetch(process.env.PUBLIC_URL +'/agentforce_specialist_mock_70.json');
+    const res = await fetch('./agentforce_specialist_mock_70.json');
     const raw = await res.json();
     const rawCopy = [...raw];
   } catch (err) {
