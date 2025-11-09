@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "question": "Which features can automate business processes in Salesforce?",
+    "options": [
+      "Workflow Rules",
+      "Reports",
+      "Dashboards",
+      "Flows"
+    ],
+    "answer": [0, 3],
+    "type": "multi"
+  },
+  {
+    "id": 2,
+    "question": "Which data type can be used in a formula field?",
+    "options": [
+      "Text",
+      "Checkbox",
+      "Currency",
+      "All of the above"
+    ],
+    "answer": [3],
+    "type": "single"
+  },
+  {
+    "id": 3,
+    "question": "Which tool should you use to build complex record-triggered automation?",
+    "options": [
+      "Process Builder",
+      "Flow Builder",
+      "Workflow Rule",
+      "Validation Rule"
+    ],
+    "answer": [1],
+    "type": "single"
+  },
+  {
+    "id": 4,
+    "question": "Select all that control data access in Salesforce.",
+    "options": [
+      "Profiles",
+      "Permission Sets",
+      "Sharing Rules",
+      "List Views"
+    ],
+    "answer": [0, 1, 2],
+    "type": "multi"
+  }
+]
